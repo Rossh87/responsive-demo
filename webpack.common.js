@@ -30,9 +30,7 @@ module.exports = {
 		rules: [{
 			test: /\.(scss||sass)$/,
 			use: [
-				process.env.NODE_ENV !== 'production' ?
-					MiniCssExtractPlugin.loader :
-					'style-loader',
+				'style-loader',
 				'css-loader',
 				'sass-loader'
 			]
