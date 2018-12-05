@@ -12,5 +12,16 @@ module.exports = merge(common, {
 		contentBase: path.resolve(__dirname, 'dist'),
 		compress: true,
 		port: 9000
+	},
+
+	module: {
+		rules: [{
+			test: /\.(scss||sass)$/,
+			use: [
+				'style-loader',
+				'css-loader',
+				'sass-loader'
+			]
+		}]
 	}
 });

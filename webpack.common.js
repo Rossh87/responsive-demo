@@ -24,16 +24,5 @@ module.exports = {
 		}),
 
 		new CleanWebpackPlugin(['dist'])
-	],
-
-	module: {
-		rules: [{
-			test: /\.(scss||sass)$/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'sass-loader'
-			]
-		}]
-	}
+	]
 }
