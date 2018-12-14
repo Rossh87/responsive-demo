@@ -1,0 +1,23 @@
+
+svg {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.logo {
+	fill: $white;
+
+	&.logo--header {
+		width: 25%;
+		min-width: 10rem;
+		max-width: 15rem;
+	}
+
+	&.logo--footer {
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		opacity: .05;
+	}
+}
+

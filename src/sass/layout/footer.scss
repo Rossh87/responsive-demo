@@ -1,0 +1,35 @@
+.footer {
+	background-color: $dark;
+	color: $text-inverse;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5em 0;
+	overflow: hidden;
+}
+
+%flex-center {
+	display: flex;
+	justify-content: space-around;
+}
+
+.social-links {
+	@extend %flex-center;
+
+	font-size: 3rem;
+	opacity: 0.75;
+	margin: .7em 0;
+}
+
+.footer {
+	position:relative;
+}
+
+.nav-footer {
+	@extend %flex-center;
+
+	font-weight: $font-bold;
+	width: 80%;
+	margin: 0 auto;
+}
+

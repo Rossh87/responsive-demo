@@ -24,5 +24,26 @@ module.exports = {
 		}),
 
 		new CleanWebpackPlugin(['dist'])
-	]
+	],
+
+	module: {
+		rules: [
+			{
+				test: /\.(png|jpg|gif)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'img/[name].[ext]'
+						}
+					}
+				]
+			},
+
+			{
+				test: /\.svg$/,
+				loader: 'svg-inline-loader'
+			}
+		],
+	}
 }

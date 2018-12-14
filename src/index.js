@@ -1,11 +1,15 @@
-import './sass/main.scss'
+import './sass/main.scss';
+import './img/main';
+import './js/menu';
+import logo from './img/logo.svg';
 
-// function makeDiv() {
-// 	console.log(process.env.NODE_ENV);
-// 	console.log('test');
-// 	const div = document.createElement('div');
-// 	div.innerHTML = 'Hello world';
-// 	return div;
-// }
+const logoDivs = document.querySelectorAll('.logo');
 
-// document.body.appendChild(makeDiv());
+(function(divs) {
+	const divsArr = [...divs];
+
+	divsArr.forEach(div => {
+		div.innerHTML = logo;
+	});
+})(logoDivs);
+
