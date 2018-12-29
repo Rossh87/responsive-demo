@@ -6,18 +6,24 @@ svg {
 
 .logo {
 	fill: $white;
-
-	&.logo--header {
-		width: 25%;
-		min-width: 10rem;
-		max-width: 15rem;
-	}
-
-	&.logo--footer {
-		position: absolute;
-		width: 100%;
-		overflow: hidden;
-		opacity: .05;
-	}
 }
+
+.header_logo {
+	width: 25%;
+	min-width: 10rem;
+	max-width: 15rem;
+}
+
+.footer_logo {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	opacity: .05;
+
+	@media (min-width: 725px) {
+		bottom: 1px;
+	}	
+}
+
+
 

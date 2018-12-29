@@ -6,30 +6,40 @@
 	align-items: center;
 	padding: 5em 0;
 	overflow: hidden;
+	position: relative;
+
+	@media (min-width: 725px) {
+		min-height: 375px;
+	}
 }
 
 %flex-center {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	width: 100%;
 }
 
-.social-links {
+.footer_social-links {
 	@extend %flex-center;
-
+	
 	font-size: 3rem;
 	opacity: 0.75;
 	margin: .7em 0;
 }
 
-.footer {
-	position:relative;
+.footer_nav {	
+	font-weight: $font-bold;
+	margin: 0 auto;
 }
 
-.nav-footer {
-	@extend %flex-center;
-
-	font-weight: $font-bold;
-	width: 80%;
+.footer_title {
 	margin: 0 auto;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	line-height: 1;
+	padding: .75em 0;
+	border-top: 1px solid $text-inverse;
+	border-bottom: 1px solid $text-inverse;
+	max-width: 75%;
 }
 

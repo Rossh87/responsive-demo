@@ -35,19 +35,6 @@ h2 {
 	font-size: 1.2rem;
 }
 
-.title-box {
-	background-color: $accent;
-	color: $text-inverse;
-	margin: 0 auto;
-	padding: 2em;
-	transform: translateY(50%);
-	width:90%;
-
-	& + .bg-main {
-		padding-top: 8em;
-	}
-}
-
 .title-large {
 	font-size: 3rem;
 	font-weight: $font-black;
@@ -58,13 +45,3 @@ h2 {
 	}
 }
 
-.title-footer {
-	margin: 0 auto;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	line-height: 1;
-	padding: .75em 0;
-	border-top: 1px solid $text-inverse;
-	border-bottom: 1px solid $text-inverse;
-	max-width: 70%;
-}

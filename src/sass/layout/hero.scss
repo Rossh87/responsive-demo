@@ -2,6 +2,23 @@
 	background: linear-gradient(to right, $main, $secondary);
 	color: $text-inverse;
 	padding: 8em 0;
-	text-align: center;
+
+	@media (min-width: 725px) {
+		height: 60vmin;
+		min-height: 700px;
+	}
+}
+
+.hero_text {
+	padding: 0 2em;
+
+	@media (min-width: 725px) {
+		text-align: initial;
+		margin-top: 10vmax;
+	}
+} 
+
+.hero_img {
+	padding: 0 2em;
 }
 

@@ -1,21 +1,28 @@
-.sales-points {
-	padding: 10vh 0 0;
+.points {
+	padding: 10vw 0 0;
+
+	@media (max-width: 725px) {
+		padding-top: 72px;
+	}
 }
 
-.sales-point {
-	margin-bottom: 3.5em;
+.points_graphic-block_grid {
+	padding: 2em 0;
+}
 
-	&:first-of-type {
-		margin-top: 1.5em;
-	}	
+.points_graphic-block {
+	padding: 0 2em 1em;
+	min-width: 300px;
 
-	&:last-of-type {
-		margin-bottom: 0;
+	@media (min-width: 725px) {
+		&:first-of-type {
+			margin-top: 0;
+		}
 	}
 }
 
 @media (min-width: 725px) {
-	.sales-point {
+	.points_graphic-block {
 
 		&:first-of-type {
 			margin-top: 0;
