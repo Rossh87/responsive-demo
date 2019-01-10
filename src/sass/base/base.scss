@@ -2,18 +2,5 @@
 	box-sizing: border-box;
 }
 
-body {
-	color: $text-main;
-	text-align: center;
-
-	@media (min-width: 725px) {
-		line-height: 1.2em;
-	}
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-}
 
 

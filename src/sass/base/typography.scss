@@ -2,46 +2,5 @@ html {
 	@include font($font-normal);
 }
 
-h1, h2, h3, h4, h5, h6, p {
-	margin: 0 0 .75rem;
-}
 
-h1 {
-	font-size: 2rem;
-	font-weight: $font-light;
-	line-height: 1.15;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-}
-
-h2 {
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	line-height: 1;
-}
-
-.unstyled-list {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	& * {
-		color:inherit;
-		text-decoration: none;
-	}
-}
-
-.text-intro {
-	font-size: 1.2rem;
-}
-
-.title-large {
-	font-size: 3rem;
-	font-weight: $font-black;
-	line-height: .9;
-
-	span {
-		font-weight: $font-light;
-	}
-}
 
