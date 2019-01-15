@@ -1,50 +1,62 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
-	entry: {
-		index: './src/index.js'
-	},
+module.exports = env => {
+	const devMode = env.NODE_ENV !== 'production';
+	
 
-	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'dist')
-	},
+	return {
+		entry: {
+			index: './src/index.js'
+		},
 
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'responsive demo',
-			template: path.resolve(__dirname, 'src', 'views', 'index.html')
-		}),
+		output: {
+			filename: devMode ?
+				'[name].bundle.js'
+				: '[name].[hash].bundle.js',
 
-		new MiniCssExtractPlugin({
-			filename: '[name].css'
-		}),
+			path: path.resolve(__dirname, 'dist')
+		},
 
-		new CleanWebpackPlugin(['dist'])
-	],
+		plugins: [
+			new CleanWebpackPlugin(['dist']),
 
-	module: {
-		rules: [
-			{
-				test: /\.(png|jpg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: 'images'
-						}
-					}
-				]
-			},
-
-			{
-				test: /\.svg$/,
-				loader: 'svg-inline-loader'
-			}
+			new HtmlWebpackPlugin({
+				title: 'Placeholder',
+				template: path.resolve(__dirname, 'src/views/index.html')
+			}),
 		],
+
+		module: {
+		    rules: [{
+		        test: /\.(png|jpe?g|gif)$/,
+		        use: [
+			        {
+			          	loader: 'url-loader',
+
+			          	options: {
+			          		fallback: 'file-loader',
+
+				            // 10kb limit to inline encoded images
+				          	limit: 10 * 1024, 
+
+				            // Options passed-through to file-loader on fallback:
+				          	name: devMode ?
+				            	'[name].ext'
+				            	:'[name].[hash].ext',
+
+				           	outputPath: 'images'
+			          	}
+			        },
+		        ],
+			}],
+		},
+
+		resolve: {
+			alias: {
+				Images: path.resolve(__dirname, 'src', 'public', 'images')
+			}
+		}
 	}
 }

@@ -3,25 +3,32 @@ const common = require('./webpack.common.js');
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = merge(common, {
-	mode: 'development',
 
-	devtool: 'inline-source-map',
+module.exports = env => {
+	const devMode = env.NODE_ENV !== 'production';
 
-	devServer: {
-		contentBase: path.resolve(__dirname, 'dist'),
-		compress: true,
-		port: 9000
-	},
+	return merge(common(env), {
+		mode: 'development',
 
-	module: {
-		rules: [{
-			test: /\.(scss||sass)$/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'sass-loader'
-			]
-		}]
-	}
-});
+		devtool: 'inline-source-map',
+
+		devServer: {
+			compress: true,
+			port: 9000
+		},
+
+		module: {
+			rules: [{
+				test: /\.(scss||sass)$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					'sass-loader'
+				]
+			}]
+		}
+	});
+
+
+}
+
