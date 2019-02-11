@@ -11,6 +11,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = env => {
 	const devMode = env.NODE_ENV !== 'production';
 
+	// because we are exporting our webpack config files as functions, we *must* pass the 'env' argument
+	// the function exported as 'common' in order for both files to be merged correctly.
 	return merge(common(env), {
 		mode: 'production',
 
